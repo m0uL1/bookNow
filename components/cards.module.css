@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+
+
+.Cards {
+    margin-top: 10px;
+    margin: 15px;
+    background-color: #16292c;
+    border-radius: 15px;
+    align-items: center;
+    width: 270px;
+    height: 490px;
+    border-color: #2c2631;
+    direction: flex;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 2px 20px #292c35;
+    justify-content: space-between;
+}
+
+.Cards:hover{
+    box-shadow: 0 6px 30px #292c35;
+}
+
+
+.Cards .cardBody{
+    width: 265px;
+    height: 490px;
+}
+.Cards .cardImage:hover{
+
+    transition: 1s;
+    transform: scale(1.04);
+    border-radius: 12px;
+    box-shadow: 0 5px 30px #292c35;
+
+}
+.Cards .cardImage {
+    
+    width: 270px;
+    height: 495px;
+    border-radius: 10px;
+
+    object-fit: cover;
+}
+
+
+.main .cardTitle{
+    margin-top: -2px;
+    margin-left: 25px;
+    display: flex;
+    position: absolute;
+    color: #161313;
+    text-align: center;
+}
+
+  
+.main .Genre {
+    background-color: #f8fcfa00;
+    margin-top: 25px;
+    color: #1b1818;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
