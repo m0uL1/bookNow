@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './login.module.css'
-const Login = () => {
+function Login() {
     return (
       <div className={style.loginBox}>
         <h2>Login</h2>
