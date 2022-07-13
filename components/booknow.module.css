@@ -36,6 +36,7 @@
     font-size: 17px;
     font-weight: 10px;
     padding-left: 50px;
+    height: 80px;
 }
 
 .wakeBox .Available{
@@ -72,11 +73,23 @@
 
 .seatBox {
     position: relative;
-    width: 80%;
+    width: 50%;
     height: 500px;
     scroll-behavior: auto;
     margin: auto;
     overflow-y: scroll;
     float:center;
-    background: rgba(56,0,2,.5);
+    background: rgba(11, 11, 17, 0.466);
+    border-radius: 30px;
+}
+
+.seatBox .seatTable{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+
+}
+
+.seatBox .seatTable .forMargin{
+    padding: 10px;
 }

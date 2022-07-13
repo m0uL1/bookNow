@@ -4,9 +4,8 @@ import style from './bookedchair.module.css'
 
 function BookedChair() {
     return (
-
-        <div className={style.masterdiv}>
-        </div>
+            <div className={style.masterdiv}>
+            </div>
     );
 };
 

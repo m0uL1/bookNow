@@ -2,12 +2,11 @@
 
 .chair {
     margin-top: 10px;
-    margin: 15px;
     background-color: #f04285;
     border-radius: 15px;
     align-items: center;
-    width: 40px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     direction: flex;
     display: flex;
     cursor: pointer;
