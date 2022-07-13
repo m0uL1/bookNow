@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet");
+
+.main .navHeader{
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(-45deg,#0a1e77, #0c1e6e, #0c1861,#062372 );
+}
+
+.main .navHeader .navMovieName{
+    text-align: center;
+    font-family: monospace;
+    font-size: 22px;
+}
+
+
+.main .navHeader .navMovieDetails{
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Parmanent Marker';
+    font-size: 20px;
+}
+  
+@keyframes typing {
+    from {
+      width: 20%
+    }
+}
+
+.wakeBox{
+    display:flex;
+    flex-direction:row;
+    background: #a4ddf385;
+    align-items: center;
+    position: relative;
+    font-size: 17px;
+    font-weight: 10px;
+    padding-left: 50px;
+}
+
+.wakeBox .Available{
+    font-size: 17px;
+}
+
+.wakeBox .Booked{
+    font-size: 17px;
+}
+
+.wakeBox span{
+    margin-top: 10px;
+    margin: 15px;
+    background-color: #f04285;
+    border-radius: 15px;
+    align-items: center;
+    width: 40px;
+    height: 45px;
+    direction: flex;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 2px 20px #f04285;
+    justify-content: space-between;
+}
+.main p{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-size: medium;
+    color: black;
+    padding: 10px;
+}
+
+.seatBox {
+    position: relative;
+    width: 80%;
+    height: 500px;
+    scroll-behavior: auto;
+    margin: auto;
+    overflow-y: scroll;
+    float:center;
+    background: rgba(56,0,2,.5);
+}

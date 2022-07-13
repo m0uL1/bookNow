@@ -1,0 +1,14 @@
+.masterdiv {
+    margin-top: 10px;
+    margin: 15px;
+    background-color: #f04285;
+    border-radius: 15px;
+    align-items: center;
+    width: 40px;
+    height: 45px;
+    direction: flex;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 2px 20px #f04285;
+    justify-content: space-between;
+}
