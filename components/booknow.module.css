@@ -91,3 +91,39 @@
 .clicke:focus{
     padding: 30px;
 }
+
+
+.Invoice {
+    position: absolute;
+    width: 20%;
+    height: 450px;
+    margin: auto;
+    top: 420px;
+    right: -8%;
+    float: right;
+    margin-left:auto;
+    margin-right:0;
+    transform: translate(-50%, -50%);
+    background: rgba(56,0,2,.5);
+    box-sizing: borderBox;
+    box-shadow: 0 15px 25px rgba(56,0,0,.6);
+    border-radius: 25px;
+    overflow-y: hidden;
+  }
+.Invoice table{
+    width: 100%;
+    padding: 0px;
+}
+
+.Invoice .tableInvoice{
+    height: 20px;
+    border-top: #062372;
+    border-top: 0px;
+}
+.Invoice h2 {
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-top: 0%;
+    color: #fff;
+    text-align: center;
+}

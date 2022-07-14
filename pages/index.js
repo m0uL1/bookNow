@@ -7,10 +7,11 @@ import Screen from '../components/Screen'
 import BookNow from '../components/BookNow'
 import UploadModal from '../components/UploadModal'
 class App extends React.Component{
-  render(){
-    return(
-      
-        <React.StrictMode>
+
+
+  /**
+  
+      <React.StrictMode>
           <div>
 
           <BookNow 
@@ -27,7 +28,14 @@ class App extends React.Component{
           } }
           />
           </div>
-        </React.StrictMode>      
+        </React.StrictMode> 
+   
+   */
+
+  render(){
+    return(
+      123
+             
     )
   }
   //  

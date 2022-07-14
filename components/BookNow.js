@@ -68,16 +68,81 @@ const BookNow = (props) => {
         );
     };
 
-    const Results = (pay) => (
-        <button className={buttonStyle.button} value={pay.count}>
-            {pay.count} SOL
-        </button>
-    )
+    const Results = (pay) => {
+        return(
+            <div className={style.Invoice}>
+                <h2>Invoice</h2>
+                <table className={style.tableInvoice}>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <center>
+                                    <h4>Number of tickets booked: </h4>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <h4> { pay.count }</h4>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <h4> For 1 Ticket:</h4>
+                                </center>
+                                
+                            </td>
+                            <td>
+                                <center>
+                                    <h4> 0.056 SOL</h4>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <h5> -Calculation:</h5>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <h4> {pay.count}*0.056 </h4>
+                                </center>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <h4>Total SOL:</h4>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <h4>
+                                    {pay.count*0.056}
+                                    </h4>
+                                </center>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <center>
+                    <button className={buttonStyle.button} value={pay.count}>
+                        {pay.count*0.056} SOL
+                    </button>
+                </center>
+            </div>
+        );
+    }
 
 
     return (
         <React.StrictMode>
             <div className={style.main}>
+            {showPrice? <Results count={chair.length} /> : null}
                 <div>
                     <div className={style.navHeader}>
                         <div className={style.navMovieName}>
@@ -98,8 +163,7 @@ const BookNow = (props) => {
                             <p>Booked</p>
                         </div>
                     </div>
-                    <p> Each seat tooks 0.0023 SOL</p>
-                    {showPrice? <Results count={chair.length*0.0025}/> : null}
+                    <p> Each seat tooks 0.056 SOL</p>
                     <div className={style.seatBox}>
 
                     <table className={style.seatTable}>
