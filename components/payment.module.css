@@ -1,0 +1,13 @@
+.button{
+    width: 100px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+.button:hover{
+    background: #48b7bd;
+    color: #fff;
+    border-radius: 5px;
+    transition: 1s;
+    box-shadow: 0 0 5px #03e9f4;
+}

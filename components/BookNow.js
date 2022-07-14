@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './booknow.module.css'
 import Chair from './Chair';
 import Screen from './Screen';
 import BookedChair from './BookedChair'
+import buttonStyle from './payment.module.css'
+
+
+
 
 const row1 = ['A1','B1','C1','D1','E1','F1','G1','_','_','_','H1','I1','J1']
 const row2 = ['A2','B2','C2','D2','E2','F2','G2','_','_','_','H2','I2','J2']
@@ -14,27 +18,63 @@ const row7 = ['A7','B7','C7','D7','E7','F7','G7','_','_','_','H7','I7','J7']
 const row8 = ['A8','B8','C8','D8','E8','F8','G8','_','_','_','H8','I8','J8']
 
 
-const Chair_ = (args) => {
-    return (
-        <td key={args.id_}>
-            <Chair />
-        </td>
-    );
-};
+const BookNow = (props) => {
+
+    var selectedChair = [];
+
+    var selectedChair_=[];
+
+    const [showPrice, setPrice] = React.useState(false)
+    const [chair, listsOfChair] = useState([]);
 
 
-const Nochair_ = (args) => {
-    return (
-        <td key={args.id_}>
-            <BookedChair />
-        </td>
-    );
-};
+    const selectChair = (chairID) => {
+        selectedChair_  = chair.filter(function(ele){ 
+            return ele != chairID; 
+        });
+
+        function arrayEquals(a, b) {
+            return Array.isArray(a) &&
+                Array.isArray(b) &&
+                a.length === b.length &&
+                a.every((val, index) => val === b[index]);
+        }
+
+        if (arrayEquals(chair,selectedChair_)){
+            listsOfChair( selectedChair => [...selectedChair,chairID]);
+            setPrice(true)
+        }else{
+            listsOfChair(chair.filter(function(ele){ return ele != chairID }));
+        }
+    }
 
 
+    const Chair_ = (args) => {
+        return (
+            <td key={args.id_} className={style.clicke} onClick={() => selectChair(args.id_)}>
+                <center>
+                    <Chair />
+                </center>
+            </td>
+        );
+    };
 
 
-function BookNow(props){
+    const Nochair_ = (args) => {
+        return (
+            <td key={args.id_} className={style.AlreadyBooked}>
+                <center><BookedChair /></center>
+            </td>
+        );
+    };
+
+    const Results = (pay) => (
+        <button className={buttonStyle.button} value={pay.count}>
+            {pay.count} SOL
+        </button>
+    )
+
+
     return (
         <React.StrictMode>
             <div className={style.main}>
@@ -59,6 +99,7 @@ function BookNow(props){
                         </div>
                     </div>
                     <p> Each seat tooks 0.0023 SOL</p>
+                    {showPrice? <Results count={chair.length*0.0025}/> : null}
                     <div className={style.seatBox}>
 
                     <table className={style.seatTable}>

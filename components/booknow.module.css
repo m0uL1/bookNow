@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css?family=Crushed");
 .main .navHeader{
     padding: 10px;
     width: 100%;
@@ -85,4 +85,9 @@
 
 .seatBox .seatTable .forMargin{
     padding: 10px;
+}
+
+
+.clicke:focus{
+    padding: 30px;
 }

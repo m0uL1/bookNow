@@ -5,12 +5,14 @@ import style from "../styles/App.module.css"
 import Chair from '../components/Chair'
 import Screen from '../components/Screen'
 import BookNow from '../components/BookNow'
+import UploadModal from '../components/UploadModal'
 class App extends React.Component{
   render(){
     return(
       
         <React.StrictMode>
           <div>
+
           <BookNow 
             details = "Today,  13 Jul, 03:15 PM at Innovative Multiplex, Marathahalli"
             movieTitle = "JugJugg Jeeyo"
