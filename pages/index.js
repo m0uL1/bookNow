@@ -12,7 +12,6 @@ class App extends React.Component{
 
 
   /**
-  
       <React.StrictMode>
           <div>
 
@@ -31,13 +30,11 @@ class App extends React.Component{
           />
           </div>
         </React.StrictMode> 
-   
    */
 
   render(){
     return(
-      <UploadMovie />
-             
+      123             
     )
   }
   //  

@@ -134,5 +134,4 @@ const UploadMovie = () => {
         </div>
     );
 };
-
 export default UploadMovie;
