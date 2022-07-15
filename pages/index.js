@@ -6,6 +6,8 @@ import Chair from '../components/Chair'
 import Screen from '../components/Screen'
 import BookNow from '../components/BookNow'
 import UploadModal from '../components/UploadModal'
+import UploadMovie from '../components/UploadMovie'
+import BookedChair from '../components/BookedChair'
 class App extends React.Component{
 
 
@@ -34,7 +36,7 @@ class App extends React.Component{
 
   render(){
     return(
-      123
+      <UploadMovie />
              
     )
   }

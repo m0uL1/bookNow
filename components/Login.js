@@ -6,11 +6,11 @@ function Login() {
         <h2>Login</h2>
         <form>
           <div className={style.userBox}>
-            <input type="text" name="" required="" />
+            <input type="text" name="" required/>
             <label>Username</label>
           </div>
           <div className={style.userBox}>
-            <input type="password" name="" required="" />
+            <input type="password" name="" required/>
             <label>Password</label>
           </div>
           <table className={style.aling_}>

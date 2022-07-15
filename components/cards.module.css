@@ -2,8 +2,6 @@
 
 
 .Cards {
-    margin-top: 10px;
-    margin: 15px;
     background-color: #16292c;
     border-radius: 15px;
     align-items: center;
@@ -45,7 +43,7 @@
 
 
 .main .cardTitle{
-    margin-top: -2px;
+    margin-top: 4px;
     margin-left: 25px;
     display: flex;
     position: absolute;
@@ -56,7 +54,7 @@
   
 .main .Genre {
     background-color: #f8fcfa00;
-    margin-top: 25px;
+    margin-top: 22px;
     color: #1b1818;
     font-size: 16px;
     padding: 16px 32px;

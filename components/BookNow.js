@@ -4,6 +4,7 @@ import Chair from './Chair';
 import Screen from './Screen';
 import BookedChair from './BookedChair'
 import buttonStyle from './payment.module.css'
+import TickChair from './TickChair';
 
 
 
@@ -29,6 +30,13 @@ const BookNow = (props) => {
 
 
     const selectChair = (chairID) => {
+
+        if (props.items[chairID] == 0 ){
+            props.items[chairID] = -1
+        }else{
+            props.items[chairID] = 0
+        }
+
         selectedChair_  = chair.filter(function(ele){ 
             return ele != chairID; 
         });
@@ -53,7 +61,7 @@ const BookNow = (props) => {
         return (
             <td key={args.id_} className={style.clicke} onClick={() => selectChair(args.id_)}>
                 <center>
-                    <Chair />
+                    { props.items[args.id_] < 0 ? <TickChair /> : <Chair /> }
                 </center>
             </td>
         );
@@ -155,13 +163,17 @@ const BookNow = (props) => {
                     <div className={style.wakeBox}>
                         <Chair />
                         <div className={style.Available}>
-                            
                             <p>Available</p>
                         </div>
                         <BookedChair />
                         <div className={style.Booked}>
                             <p>Booked</p>
                         </div>
+                        <TickChair />
+                        <div className={style.seleted}>
+                            <p>Selected</p>
+                        </div>
+
                     </div>
                     <p> Each seat tooks 0.056 SOL</p>
                     <div className={style.seatBox}>
@@ -188,7 +200,7 @@ const BookNow = (props) => {
                                         }
                                         if (props.items[key] == 1){
                                             return <Nochair_ id_={key} />
-                                        }else{
+                                        }else {
                                             return <Chair_ id_={key} />
                                         }
                                     })

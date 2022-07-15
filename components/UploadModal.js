@@ -7,42 +7,48 @@ const UploadModal = ({
   setVideoUrl,
   setNewVideoShow,
 }) => {
-  return (
-    <div className={style.wrapper}>
-      <div className={style.title}>Upload New Video</div>
-      <div className={style.inputField}>
-        <div className={style.inputTitle}>Description</div>
-        <div className={style.inputContainer}>
-          <input
+/**
+   * <input
             className={style.input}
             type='text'
             value={description}
-            onChange={e => setDescription(e.target.value)}
+            onChange={e => setDescription(e.target.value)
+              onClick={() => setNewVideoShow(false)}
+              className={`${style.button} ${style.cancelButton}`}
           />
-        </div>
-      </div>
+   */
+
+  return (
+    <div className={style.wrapper}>
+      <div className={style.title}>Upload New Movie</div>
       <div className={style.inputField}>
-        <div className={style.inputTitle}>Video Url</div>
-        <div className={style.inputContainer}>
-          <input
-            className={style.input}
-            type='text'
-            value={videoUrl}
-            onChange={e => setVideoUrl(e.target.value)}
-          />
-        </div>
+          <div className={style.userBox}>
+            <input type="" name="" required/>
+            <label>Movie name </label>
+          </div>
+          <div className={style.userBox}>
+            <input type="" name="" 
+              onChange={e => setUserName(e.target.value)}
+            required/>
+            <label>Genre </label>
+          </div>
+          <div className={style.userBox}>
+            <input type="" name="" required/>
+            <label>Ticket price </label>
+          </div>
+          <div className={style.uploadBtn}>
+            <button className={style.btn}>Upload Movie Poster</button>
+            <input type="file" name="myfile" />
+          </div>
       </div>
       <div className={style.modalButtons}>
         <button
-          onClick={() => setNewVideoShow(false)}
-          className={`${style.button} ${style.cancelButton}`}
-        >
+          
+          className={`${style.button} ${style.cancelButton}`}>
           Cancel
         </button>
         <button
-          onClick={newVideo}
-          className={`${style.button} ${style.createButton}`}
-        >
+          className={`${style.button} ${style.createButton}`}>
           Create New
         </button>
       </div>
@@ -51,3 +57,5 @@ const UploadModal = ({
 }
 
 export default UploadModal
+
+
