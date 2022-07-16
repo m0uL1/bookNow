@@ -6,11 +6,12 @@ function Cards(props){
             <div className={style.Cards}>
                 <div className={style.cardBody}>
                     <img src={props.img} className={style.cardImage} />
-                    
+                </div>
+                <div className={style.Title}>
+                    <h2 className={style.cardTitle}>{props.title}</h2>
+                    <h4 className={style.Genre}>{props.genre}</h4>                    
                 </div>
             </div>
-            <h2 className={style.cardTitle}>{props.title}</h2>
-            <div className={style.Genre}> - {props.genre}</div>
         </div>
         
     );

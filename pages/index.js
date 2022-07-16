@@ -8,6 +8,9 @@ import BookNow from '../components/BookNow'
 import UploadModal from '../components/UploadModal'
 import UploadMovie from '../components/UploadMovie'
 import BookedChair from '../components/BookedChair'
+import HomeNav from '../components/HomeNav'
+import Home from '../components/Home'
+
 class App extends React.Component{
 
 
@@ -34,8 +37,12 @@ class App extends React.Component{
 
   render(){
     return(
-      123             
-    )
+      <div className={style.rowC}>
+        <Cards />
+        <Cards />
+      </div>
+        
+      )
   }
   //  
 }
