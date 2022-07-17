@@ -10,8 +10,10 @@ import UploadMovie from '../components/UploadMovie'
 import BookedChair from '../components/BookedChair'
 import HomeNav from '../components/HomeNav'
 import Home from '../components/Home'
+import { useWallet } from '@solana/wallet-adapter-react'
 
-class App extends React.Component{
+
+function App(){
 
 
   /**
@@ -39,23 +41,10 @@ class App extends React.Component{
 
   }
    */
-  
 
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      login: 1
-    };
-  };
-
-  render(){
-   
-    return(
-      this.state.login ? <Home /> : <Login />
-
-      )
-  }
+  return(
+      <Login />
+    )
   //  
 }
 export default App;

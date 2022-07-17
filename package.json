@@ -9,12 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@project-serum/anchor": "^0.24.2",
+    "@project-serum/serum": "^0.13.65",
+    "@solana/spl-token": "^0.2.0",
+    "@solana/wallet-adapter-base": "^0.9.5",
+    "@solana/wallet-adapter-react": "^0.15.8",
+    "@solana/wallet-adapter-react-ui": "^0.9.10",
+    "@solana/wallet-adapter-wallets": "^0.16.8",
+    "@solana/web3.js": "^1.39.1",
     "@swc/core-linux-x64-musl": "^1.2.216",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@solana/wallet-adapter-react": "^0.15.8",
+    "@solana/wallet-adapter-react-ui": "^0.9.10",
+    "@solana/wallet-adapter-wallets": "^0.16.8",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.2"
   }
