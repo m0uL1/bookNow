@@ -1,0 +1,34 @@
+.masterdiv {
+    margin-top: 10px;
+    background-color: #f04285;
+    border-radius: 15px;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    direction: flex;
+    display: flex;
+    box-shadow: 0 2px 20px #f04285;
+    justify-content: space-between;
+}
+
+.masterdiv:hover {
+    visibility: visible;
+}
+
+.masterdiv_ {
+    margin-top: 10px;
+    background-color: #1bc03f;
+    border-radius: 15px;
+    align-items: center;
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+    direction: flex;
+    display: flex;
+    box-shadow: 0 2px 20px #1bc03f;
+    justify-content: space-between;
+}
+.masterdiv_ img{
+    width: 100%;
+    height: 100%;
+}

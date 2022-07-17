@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeNav from './HomeNav';
-import style from './home.module.css'
+import style from '../styles/home.module.css'
 import Cards from './Cards';
 
 const Home = () => {
@@ -18,14 +18,9 @@ const Home = () => {
                         <hr width="50%" align="left"/>
                 </div>
                 <div className={style.showCase}>
-                    <row>
-                        <Cards />
-                        <Cards />
-                    </row>
-                    
-                    
 
                 </div>
+
             </div>
             
         </div>

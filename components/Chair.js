@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './chair.module.css'
+import style from '../styles/chair.module.css'
 function Chair() {
     return (
             <div className={style.chair}>

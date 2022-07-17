@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./cards.module.css"
+import style from "../styles/cards.module.css"
 function Cards(props){
     return (
         <div className={style.main}>

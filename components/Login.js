@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './login.module.css'
-import styleModal from './uploadmodal.module.css'
+import style from '../styles/login.module.css'
+import styleModal from '../styles/uploadmodal.module.css'
 function Login() {
     return (
       <div className={style.loginBox}>
-        <h2>Register Theater</h2>
+        <u><h2>Register Theater</h2></u>
         <form>
           <div className={style.userBox}>
             <input type="text" name="" required/>

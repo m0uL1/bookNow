@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './screen.module.css'
+import style from '../styles/screen.module.css'
 
 
 function Screen() {

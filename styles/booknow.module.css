@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Crushed");
+.main .navHeader{
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(-45deg,#0a1e77, #0c1e6e, #0c1861,#062372 );
+}
+
+.main .navHeader .navMovieName{
+    text-align: center;
+    font-family: monospace;
+    font-size: 22px;
+}
+
+
+.main .navHeader .navMovieDetails{
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Parmanent Marker';
+    font-size: 20px;
+}
+
+.wakeBox{
+    display:flex;
+    flex-direction:row;
+    background: #a4ddf385;
+    align-items: center;
+    position: relative;
+    font-size: 17px;
+    font-weight: 10px;
+    padding-left: 50px;
+    height: 80px;
+}
+
+.wakeBox .Available{
+    font-size: 17px;
+}
+
+.wakeBox .Booked{
+    font-size: 17px;
+}
+
+.wakeBox span{
+    margin-top: 10px;
+    margin: 15px;
+    background-color: #f04285;
+    border-radius: 15px;
+    align-items: center;
+    width: 40px;
+    height: 45px;
+    direction: flex;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 2px 20px #f04285;
+    justify-content: space-between;
+}
+.main p{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-size: medium;
+    color: black;
+    padding: 10px;
+}
+
+.seatBox {
+    position: relative;
+    width: 50%;
+    height: 500px;
+    scroll-behavior: auto;
+    margin: auto;
+    overflow-y: scroll;
+    float:center;
+    background: rgba(11, 11, 17, 0.466);
+    border-radius: 30px;
+}
+
+.seatBox .seatTable{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+
+}
+
+.seatBox .seatTable .forMargin{
+    padding: 10px;
+}
+
+
+.clicke:focus{
+    padding: 30px;
+}
+
+
+.Invoice {
+    position: absolute;
+    width: 20%;
+    height: 450px;
+    margin: auto;
+    top: 420px;
+    right: -8%;
+    float: right;
+    margin-left:auto;
+    margin-right:0;
+    transform: translate(-50%, -50%);
+    background: rgba(56,0,2,.5);
+    box-sizing: borderBox;
+    box-shadow: 0 15px 25px rgba(56,0,0,.6);
+    border-radius: 25px;
+    overflow-y: hidden;
+  }
+.Invoice table{
+    width: 100%;
+    padding: 0px;
+}
+
+.Invoice .tableInvoice{
+    height: 20px;
+    border-top: #062372;
+    border-top: 0px;
+}
+.Invoice h2 {
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-top: 0%;
+    color: #fff;
+    text-align: center;
+}

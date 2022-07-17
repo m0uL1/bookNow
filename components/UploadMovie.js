@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styleModal from './uploadmodal.module.css'
+import styleModal from '../styles/uploadmodal.module.css'
 
-import style from './uploadmovie.module.css'
+import style from '../styles/uploadmovie.module.css'
 import Cards from './Cards'
 
 const UploadMovie = () => {

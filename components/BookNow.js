@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import style from './booknow.module.css'
+import style from '../styles/booknow.module.css'
 import Chair from './Chair';
 import Screen from './Screen';
 import BookedChair from './BookedChair'
-import buttonStyle from './payment.module.css'
+import buttonStyle from '../styles/payment.module.css'
 import TickChair from './TickChair';
 
 

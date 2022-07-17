@@ -1,0 +1,117 @@
+
+ .loginBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(56,0,2,.5);
+    box-sizing: borderBox;
+    box-shadow: 0 15px 25px rgba(56,0,0,.6);
+    border-radius: 25px;
+    flex-direction: column;
+    display: flex;
+  }
+  
+ .loginBox h2 {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+
+  }
+  .loginBox img{
+    width: 100%;
+    text-align: center;
+    height: 100%;
+  }
+
+
+.loginBox .userBox {
+    position: relative;
+  }
+  
+  .loginBox .userBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .loginBox .userBox label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .loginBox .userBox input:focus ~ label,
+  .loginBox .userBox input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  .loginBox a {
+    position: relative;
+    display: inlineBlock;
+    padding: 10px 20px;
+    color: #a4d5df;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 1s;
+    margin-top: 40px;
+  }
+  .loginBox .aling_{
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .loginBox .submit{
+    width: 33%;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+
+  .loginBox .or_{
+    width: 34%;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+
+
+  .loginBox .wallet{
+    width: 33%;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+
+  .loginBox .submit:hover{
+    background: #48b7bd;
+    color: #fff;
+    border-radius: 5px;
+    transition: 1s;
+    box-shadow: 0 0 5px #03e9f4;
+  }
+  .loginBox .wallet:hover {
+    background: #4bb2bb;
+    color: #fff;
+    border-radius: 5px;
+    transition: 1s;
+    box-shadow: 0 0 5px #03e9f4;
+  }
+  
+  

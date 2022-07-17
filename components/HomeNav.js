@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './homenav.module.css';
+import style from '../styles/homenav.module.css';
 const HomeNav = () => {
     return (
         <div className={style.navbar} >

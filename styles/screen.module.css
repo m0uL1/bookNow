@@ -1,0 +1,11 @@
+.masterdiv{
+    position: relative;
+    width: 25%;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .underpic{
+    width: 100%; 
+  }

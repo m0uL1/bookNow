@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Login from '../components/Login'
 import Cards from '../components/Cards'
 import style from "../styles/App.module.css"
@@ -33,14 +33,27 @@ class App extends React.Component{
           />
           </div>
         </React.StrictMode> 
+
+        
+    
+
+  }
    */
+  
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      login: 1
+    };
+  };
 
   render(){
+   
     return(
-      <div>
-        <Home />
-      </div>
-               
+      this.state.login ? <Home /> : <Login />
+
       )
   }
   //  

@@ -1,4 +1,4 @@
-import style from './uploadmodal.module.css'
+import style from '../styles/uploadmodal.module.css'
 const UploadModal = ({
   description,
   videoUrl,

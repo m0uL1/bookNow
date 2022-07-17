@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './bookedchair.module.css'
+import style from '../styles/bookedchair.module.css'
 
 
 function BookedChair() {
