@@ -1,24 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
 
 .main{
-    display: flex;
-    direction: flex;
-    flex-direction: row;
+    width: 20%;
+    height: 70%;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: column;
 }
 
 .Cards {
     background-color: #4f7770;
     border-radius: 15px;
-    align-items: center;
-    width: 20%;
-    height: 70%;
+    width: inherit;
+    height: inherit;
     position: fixed;
     border-color: #2c2631;
-    direction: flex;
-    display: flex;
     cursor: pointer;
     box-shadow: 0 2px 20px #353638;
-    justify-content: space-between;
 }
 
 .Cards .Title{
@@ -42,6 +40,7 @@
     height: inherit;
     border-radius: 10px;
     position: fixed;
+    display: flex;
     object-fit: cover;
 }
 

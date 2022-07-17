@@ -19,8 +19,8 @@ const Home = () => {
                 </div>
                 <div className={style.showCase}>
                     <row>
-                    <Cards />
-                    <Cards />
+                        <Cards />
+                        <Cards />
                     </row>
                     
                     

@@ -37,11 +37,10 @@ class App extends React.Component{
 
   render(){
     return(
-      <div className={style.rowC}>
-        <Cards />
-        <Cards />
+      <div>
+        <Home />
       </div>
-        
+               
       )
   }
   //  
