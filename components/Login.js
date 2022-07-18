@@ -2,14 +2,10 @@ import React from 'react';
 import style from '../styles/login.module.css'
 import styleModal from '../styles/uploadmodal.module.css'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { useWallet } from '@solana/wallet-adapter-react'
-import Home from './Home';
 
 const Login = () => {
-  const {loggedIn} = useWallet();
     return (
       <div>
-          {loggedIn ? (<Home />) : (
         <div className={style.loginBox}>
           <u><h2>Register Theater</h2></u>
           <form>
@@ -45,7 +41,6 @@ const Login = () => {
             </table>
           </form>
       </div>
-     )}
     </div>
 
   );

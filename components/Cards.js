@@ -1,18 +1,31 @@
-import React from 'react';
+import { ComputeBudgetInstruction } from '@solana/web3.js';
+import React, { useState } from 'react';
 import style from "../styles/cards.module.css"
-function Cards(props){
+
+const Cards = (props) => {
+
+    const k = [];
+
+    const [data,setdata] = useState(0)
+    
+    const gotforBooking = (props) => {
+        setdata(1)
+        console.log(data)
+    }
+    
     return (
-        <div className={style.main}>
             <div className={style.Cards}>
-                <div className={style.cardBody}>
+                <div className={style.cardBody} 
+                    onClick={() =>  gotforBooking(props.id,props.title)}
+                >
                     <img src={props.img} className={style.cardImage} />
                 </div>
                 <div className={style.Title}>
-                    <h2 className={style.cardTitle}>{props.title}</h2>
-                    <h4 className={style.Genre}>{props.genre}</h4>                    
+                    <h2 className={style.cardTitle}> {props.title}</h2>
+                    <h4 className={style.Genre}> {props.genre}</h4>
+                                       
                 </div>
             </div>
-        </div>
         
     );
 };
