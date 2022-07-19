@@ -2,16 +2,9 @@ import { ComputeBudgetInstruction } from '@solana/web3.js';
 import React, { useState } from 'react';
 import style from "../styles/cards.module.css"
 
-const Cards = (props) => {
+function Cards (props){
 
     const k = [];
-
-    const [data,setdata] = useState(0)
-    
-    const gotforBooking = (props) => {
-        setdata(1)
-        console.log(data)
-    }
     
     return (
             <div className={style.Cards}>

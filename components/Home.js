@@ -13,31 +13,23 @@ const Home = () => {
                 <div className={style.topdiv}> 
                     <Recommended Title="Recommended Movies"
                             subTitle= "4 most popular hit movies"
-                            movienames={["Movie1","Movie2","Movie3","Movi4"]}
-                            ids={[11,22,33,44]}
-                            img={[
-                                "https://www.themoviedb.org/t/p/w500/8HLQLILZLhDQWO6JDpvY6XJLH75.jpg",
-                                "https://r7k2t3x9.rocketcdn.me/wp-content/uploads/2021/01/img-16743.jpg",
-                                "https://static.wikia.nocookie.net/villains/images/c/cf/Doom_2005_poster.jpg/revision/latest?cb=20220110191103",
-                                "https://static.wikia.nocookie.net/marvelmovies/images/5/56/JohnnyStormHalfFlame-FF.jpg/revision/latest?cb=20131228033431"
-                            ]}
-                            genre = {["comedy","action","comedy","thriller"]}
-                            
-                            
+                            id_ = {0}
                         />
                 </div>
             </div>
             <div className={style.rec}>
                 <div className={style.topdiv}> 
                     <Recommended Title=" Languages "
-                            subTitle= " Regoinal/Desi Voices" />
+                            subTitle= " Regoinal/Desi Voices"
+                            id_ = {1} />
                 </div>
             </div>
 
             <div className={style.rec}>
                 <div className={style.topdiv}> 
                     <Recommended Title=" Genres"
-                            subTitle= " Action/Comedy/Thriller " />
+                            subTitle= " Action/Comedy/Thriller"
+                            id_ = {2} />
                 </div>
             </div>
             
