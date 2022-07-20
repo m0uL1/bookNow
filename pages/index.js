@@ -7,7 +7,9 @@ import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import BookNow from '../components/BookNow'
 import UploadMovie from '../components/UploadMovie'
 
+import { changePage } from '../utils/constRedirects'
 export default function App() {
+
   /**
       <React.StrictMode>
           <div>
@@ -63,7 +65,17 @@ export default function App() {
   const { publicKey, signMessage } = useWallet();
     return(
       <div>
-        { publicKey ? <Home /> : <Login />}
+
+        { 
+          publicKey ? 
+            ( changePage() ? 
+                  <BookNow /> 
+                : 
+                  <Home /> 
+            ):
+          <Login />
+        }
+
       </div>
     )
   //  
