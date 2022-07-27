@@ -7,7 +7,9 @@ import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import BookNow from '../components/BookNow'
 import UploadMovie from '../components/UploadMovie'
 
+import { changePage } from '../utils/constRedirects'
 export default function App() {
+
   /**
       <React.StrictMode>
           <div>
@@ -48,7 +50,8 @@ export default function App() {
                           'A8':0,'B8':0,'C8':0,'D8':0,'E8':0,'F8':0,'G8':0,'H8':0,'I8':0,'J8':0,
               } }
             />
-          } />
+          } 
+        />
           <Route path="/upload" element={<UploadMovie />} />
           <Route path="/login" element={<Login />} />
           </Routes>
@@ -58,11 +61,21 @@ export default function App() {
 
   }
    */
+  // @g00g1y5p4 
   const { publicKey, signMessage } = useWallet();
     return(
       <div>
 
-        { publicKey ? <Home /> : <Login />}
+        { 
+          publicKey ? 
+            ( changePage() ? 
+                  <BookNow /> 
+                : 
+                  <Home /> 
+            ):
+          <Login />
+        }
+
       </div>
     )
   //  

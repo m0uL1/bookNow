@@ -25,6 +25,8 @@
 
 .cardBody:hover + .Title{
     animation-delay: 2s;
+    transition: 2s;
+    font-size: scale(1);
     display: block;
 }
 
