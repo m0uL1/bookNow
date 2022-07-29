@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeNav from './HomeNav';
+import HomeNav from './UserNav';
 import style from '../styles/home.module.css'
 import Recommended from './Recommened';
 
