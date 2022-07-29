@@ -8,8 +8,8 @@ request = requests.Session()
 s3 = boto3.client(
         "s3",
         endpoint_url="https://sgp1.digitaloceanspaces.com",
-        aws_access_key_id="RVSKEGZ3BIU2NGCQ7PWK",
-        aws_secret_access_key="U5esWIuop7+lIRF4i69zNhfkcLBT211Cw3hYcpi+2ls",
+        aws_access_key_id="RWK",
+        aws_secret_access_key="U5els",
     )
 
 def login():
