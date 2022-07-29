@@ -4,8 +4,8 @@ import Home from '../components/Home'
 import { useWallet } from '@solana/wallet-adapter-react'
 import {data} from '../components/Cards'
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
-import BookNow from '../components/BookNow'
-import UploadMovie from '../components/UploadMovie'
+import BookNow from './booking/BookNow'
+import UploadMovie from './upload/UploadMovie'
 
 import { changePage } from '../utils/constRedirects'
 export default function App() {
