@@ -1,9 +1,9 @@
 import React from 'react';
-import style from '../styles/homenav.module.css';
+import style from './homenav.module.css';
 const UserNav = () => {
     return (
         <div className={style.navbar} >
-            <a href="#home"><img src="logo.png" /></a>
+            <a href="#home"><img src="https://www.pngkey.com/png/full/393-3933881_book-now-button-book-now-button-png.png" /></a>
             <a href="#home">Home</a>
             <a href="#newMoview"> new Movies</a>
             <div className={style.dropdown}>

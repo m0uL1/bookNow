@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../styles/recommended.module.css'
-import Cards from './Cards';
+import Cards from './Card/Cards';
 
 import { getMovieDetails, getLanguageDetails , getGenreDetails } from '../utils/recommendation';
 

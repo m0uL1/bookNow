@@ -4,7 +4,6 @@
     width: 20%;
     height: 90%;
     display: grid;
-    gap: 1em;
     grid-auto-flow: column;
 }
 

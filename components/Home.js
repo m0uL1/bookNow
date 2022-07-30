@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeNav from './UserNav';
+import HomeNav from './Nav/PubNav';
 import style from '../styles/home.module.css'
 import Recommended from './Recommened';
 
@@ -39,3 +39,4 @@ const Home = () => {
 };
 
 export default Home;
+

@@ -1,7 +1,7 @@
 import { ComputeBudgetInstruction } from '@solana/web3.js';
 import React, { useState } from 'react';
-import style from "../styles/cards.module.css"
-import { changeState } from '../utils/constRedirects'
+import style from "./cards.module.css"
+import { changeState } from '../../utils/constRedirects'
 
 
 function Cards (props){

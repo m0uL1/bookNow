@@ -104,3 +104,39 @@
     color: #6c6c6c;
     border-radius: 6px;
   }
+
+.avatar{ 
+   overflow:scroll;  
+   position: relative;
+   right: 3%;
+   float: right;
+   cursor: pointer;
+ }
+
+.usericon{
+  border-radius:4em; border:1px solid skyblue;
+  height:45px; width:45px;  
+  background:none;
+  align-items: center; 
+  vertical-align: center;
+  margin-top: 3px;
+
+}
+
+.usericon::before{
+  content:" "; display:block;
+  height:18px; width:18px;
+  background:skyblue;
+  float: left;
+  position:relative; left: 28%;top:3px;
+  border-radius:8px;
+}
+
+.usericon::after{
+  content:" "; display:block;
+  height: 10px;width: 30px;
+  background:skyblue;
+  float: left;
+  position:relative; left:15%;top: 8px;
+  border-radius:8px 8px 0 0;
+}
