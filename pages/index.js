@@ -64,7 +64,7 @@ export default function App() {
   // @g00g1y5p4 
   const { publicKey, signMessage } = useWallet();
     return(
-     /* <div>
+     <div>
 
         { 
           publicKey ? 
@@ -75,9 +75,7 @@ export default function App() {
             ):
           <Login />
         }
-
-      </div>*/
-      <Home />
+      </div>
     )
   //  
 }
