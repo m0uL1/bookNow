@@ -114,7 +114,7 @@
  }
 
 .usericon{
-  border-radius:4em; border:1px solid skyblue;
+  border-radius:4em; border:1px solid rgb(30, 85, 107);
   height:45px; width:45px;  
   background:none;
   align-items: center; 
@@ -126,7 +126,7 @@
 .usericon::before{
   content:" "; display:block;
   height:18px; width:18px;
-  background:skyblue;
+  background:rgb(30, 85, 107);
   float: left;
   position:relative; left: 28%;top:3px;
   border-radius:8px;
@@ -135,7 +135,7 @@
 .usericon::after{
   content:" "; display:block;
   height: 10px;width: 30px;
-  background:skyblue;
+  background:rgb(30, 85, 107);
   float: left;
   position:relative; left:15%;top: 8px;
   border-radius:8px 8px 0 0;

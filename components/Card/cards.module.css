@@ -10,7 +10,7 @@
 .Cards {
     background-color: #4f7770;
     border-radius: 15px;
-    width: 20%;
+    width: inherit;
     height: 80%;
     position: absolute;
     border-color: #2c2631;

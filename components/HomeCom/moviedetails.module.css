@@ -1,0 +1,36 @@
+
+.showCase {
+    position: relative;
+    width: 80%;
+    height: 450px;
+    padding: 3%;
+    align-items: center;
+    margin-left: 10%;
+    background: rgba(145, 129, 138, 0.671);
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: column;
+    display: table;
+    direction: flex;
+}
+
+.showCase .MovieCard{
+    margin-left: 2%;
+    width: 25%;
+}
+
+.details {
+    position: relative;
+    width: 60%;
+    height: 360px;
+    padding: 3%;
+    align-items: center;
+    margin-right: 2%;
+    margin-left: 31%;
+    background: rgba(145, 129, 138, 0.671);
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: column;
+    display: table;
+    direction: flex;
+}

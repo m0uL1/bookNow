@@ -1,8 +1,8 @@
 import React from 'react';
-import style from '../styles/recommended.module.css'
-import Cards from './Card/Cards';
+import style from './recommended.module.css'
+import Cards from '../Card/Cards';
 
-import { getMovieDetails, getLanguageDetails , getGenreDetails } from '../utils/recommendation';
+import { getMovieDetails, getLanguageDetails , getGenreDetails } from '../../utils/recommendation';
 
 const Recommended = (props) => {
     let details

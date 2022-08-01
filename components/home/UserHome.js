@@ -1,11 +1,9 @@
 import React from 'react';
-import HomeNav from './Nav/PubNav';
-import style from '../styles/home.module.css'
-import Recommended from './Recommened';
+import HomeNav from '../Nav/UserNav';
+import style from './userhome.module.css'
+import Recommended from '../HomeCom/Recommened';
 
-const Home = () => {
-
-
+const UserHome = () => {
     return (
         <div>
             <HomeNav />
@@ -32,11 +30,9 @@ const Home = () => {
                             id_ = {2} />
                 </div>
             </div>
-            
-            
         </div>
     );
 };
 
-export default Home;
+export default UserHome;
 

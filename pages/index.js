@@ -1,12 +1,8 @@
 import React,{useState} from 'react'
 import Login from '../components/Login'
-import Home from '../components/Home'
+import Home from '../pages/home'
 import { useWallet } from '@solana/wallet-adapter-react'
-import {data} from '../components/Card/Cards'
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import BookNow from './booking/BookNow'
-import UploadMovie from './upload/UploadMovie'
-import GridCard from '../components/Card/GridCard'
 import { changePage } from '../utils/constRedirects'
 export default function App() {
 
@@ -71,7 +67,7 @@ export default function App() {
             ( changePage() ? 
                   <BookNow /> 
                 : 
-                  <Home /> 
+                <Home />
             ):
           <Login />
         }

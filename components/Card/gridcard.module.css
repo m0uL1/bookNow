@@ -40,10 +40,11 @@
 }
 
 .Movies{
-    display: table-row
+    display: table-row;
 }
 
 .MovieStyle{
     display: table-cell;
+    width: 23%;
 }
 
