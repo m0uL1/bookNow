@@ -4,7 +4,7 @@ import style from './userhome.module.css'
 import MovieDetails from '../HomeCom/MovieDetails';
 
 const PubHome = () => {
-    const uploadCounts = 1;
+    const uploadCounts = 2;
 
     const Nomore = () => {
         return (

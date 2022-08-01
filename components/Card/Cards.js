@@ -2,21 +2,25 @@ import { ComputeBudgetInstruction } from '@solana/web3.js';
 import React, { useState } from 'react';
 import style from "./cards.module.css"
 import { changeState } from '../../utils/constRedirects'
+import MovieDetails from '../HomeCom/MovieDetails';
 
-
-function Cards (props){
+function Cards(props){
 
     const k = [];
 
+    const [details,setDetails] = useState(0)
     function gotforBooking(title){
-        console.log(title)
-        changeState()
+        setDetails(1)
     }
     
     return (
+        <div >
+        {
+            details ? <MovieDetails /> : (
+
             <div className={style.Cards}>
                 <div className={style.cardBody} 
-                    onClick={() =>  gotforBooking(props.title)}
+                    onClick={() =>  gotforBooking()}
                 >
                     <img src={props.img} className={style.cardImage} />
                 </div>
@@ -26,6 +30,9 @@ function Cards (props){
                                        
                 </div>
             </div>
+            )
+        }
+        </div>
     );
 };
 

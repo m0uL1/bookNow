@@ -46,23 +46,69 @@
 .showCase {
     position: relative;
     width: 90%;
-    height: 350px;
-    padding: 3%;
+    height: 410px;
+    padding-top: 50px;
+    padding-left: 1%;
+    align-items: center;
     margin-left: 5%;
     background: rgba(145, 129, 138, 0.671);
     border-color: black;
     border-radius: 30px;
     flex-direction: column;
-    display: table;
     direction: flex;
 }
 
-.Movies{
-    display: table-row
-}
-
-.MovieStyle{
-    width: 600px; 
+.Sty1 {
+    position: absolute;
+    width: 23%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+    margin-right: 2%;
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: row;
     display: table-cell;
 }
+
+.Sty2 {
+    position: absolute;
+    width: 23%;
+    height: 100%;
+    float: left;
+    margin-left: 27%;
+    margin-right: 2%;
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: row;
+    display: table-cell;
+}
+
+.Sty3 {
+    position: absolute;
+    width: 23%;
+    height: 100%;
+    float: left;
+    margin-left: 51%;
+    margin-right: 1%;
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: row;
+    display: table-cell;
+}
+
+.Sty4 {
+    position: absolute;
+    width: 23%;
+    height: 100%;
+    float: left;
+    margin-left: 75%;
+    margin-right: 3%;
+    border-color: black;
+    border-radius: 30px;
+    flex-direction: row;
+    display: table-cell;
+}
+
+
 

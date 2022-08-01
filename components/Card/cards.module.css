@@ -37,6 +37,14 @@
     margin-bottom: 50%;
 }
 
+
+.Cards .cardArea{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-bottom: 50%;
+}
+
 .Cards .cardImage {
     width: 100%;
     height: 100%;
@@ -45,6 +53,17 @@
     display: flex;
     object-fit: cover;
 }
+
+
+.Cards .cardImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    object-fit: cover;
+}
+
 
 
 .Cards .cardImage:hover{

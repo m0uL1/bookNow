@@ -4,7 +4,7 @@ import PubHome from '../../components/home/PubHome';
 
 const Home = () => {
 
-    const index = 1;
+    const index = 0;
     return (
         // function to check wheter the person is publisher or user
         <div>
