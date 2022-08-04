@@ -8,7 +8,9 @@ const Home = () => {
     return (
         // function to check wheter the person is publisher or user
         <div>
-            {index ? <PubHome /> : <UserHome /> }
+            {
+                index ? <PubHome /> : <UserHome /> 
+            }
         </div>
         
     );

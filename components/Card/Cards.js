@@ -9,7 +9,7 @@ function Cards(props){
     const k = [];
 
     const [details,setDetails] = useState(0)
-    function gotforBooking(title){
+    function gotforBooking(){
         setDetails(1)
     }
     
@@ -19,16 +19,24 @@ function Cards(props){
             details ? <MovieDetails /> : (
 
             <div className={style.Cards}>
+
+                
                 <div className={style.cardBody} 
                     onClick={() =>  gotforBooking()}
                 >
                     <img src={props.img} className={style.cardImage} />
                 </div>
-                <div className={style.Title}>
-                    <h2 className={style.cardTitle}> {props.title}</h2>
-                    <h4 className={style.Genre}> {props.genre}</h4>
-                                       
+
+                <div className={style.card}>
                 </div>
+                <center>  
+                    <h4 className={style.hints}>
+                        <i className="fa fa-thumbs-o-up" aria-hidden="true"> : 90% </i> 
+                        &nbsp;&nbsp;&nbsp;
+                        <i className="fa fa-star-o" aria-hidden="true"> : 3.4 </i>
+                    </h4>    
+                </center>
+                
             </div>
             )
         }

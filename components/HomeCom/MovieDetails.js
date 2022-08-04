@@ -54,8 +54,20 @@ const MovieDetails = (props) => {
                 </div>
                 <div className={style.details}>
                     <center>
-                    <h2> Movie Name </h2>
+                        <h2> Movie Name {props.id_} </h2>
                     </center> 
+                    <div className={style.DetailsField}>
+                        <div className={style.child1}>
+                            <p> Language: [ Telugu , Hindi, English Tamil ]</p>
+                            <p> Genre: [ Action , Drama ]</p>
+                        </div>
+                    </div>
+                    <div className={style.ButtonField}>
+
+
+                    </div>
+
+
                 </div>
                 <div className={style.outcomes}>
 
