@@ -10,7 +10,7 @@ const UserNav = () => {
                 <button className={style.dropbtn} > Location
                 </button>
                 <center>
-                    <div className={style.dropdown_content} >
+                    <div className={style.dropdown_content_input} >
                         <input className={style.search_location} 
                             type="text" 
                             placeholder="Banglore, Hyderabad .."

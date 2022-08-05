@@ -33,11 +33,12 @@ const Recommended = (props) => {
                 <div>
                     {
                         view
-                            ? 
+                            ?        
                                 <MovieDetails id_={select}/> 
                             : 
                                 null 
                     }
+                    
                     <div className={style.showCase}>
                     
                             <div className={style.Movies}>

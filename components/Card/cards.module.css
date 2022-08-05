@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
-
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 .main{
     width: 20%;
     height: 90%;
@@ -15,7 +15,6 @@
     position: absolute;
     border-color: #2c2631;
     cursor: pointer;
-    box-shadow: 0 2px 20px #353638;
 }
 
 .Cards .cardBody{
@@ -79,12 +78,13 @@
 }
 
 
-.hints{
+.Cards .hints{
+    font-display: bold;
+    font-size: 15px;
     margin-left: 20%;
-    bottom: -45px;
+    bottom: -50px;
     left: 0%;
     display: flex;
     position: absolute;
-    color: #161313;
+    color: #815c5c;
 }
-

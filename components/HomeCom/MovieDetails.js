@@ -97,6 +97,7 @@ const MovieDetails = (props) => {
                 </div>
              </div>
         </div>
+        <br />
     </div>
     )
 }
