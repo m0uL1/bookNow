@@ -25,10 +25,10 @@ const UserNav = () => {
                     </i>
                 </button>
                 <div className={style.dropdown_content} >
-                <a href="#"> Telugu </a>
-                <a href="#"> Tamil </a>
-                <a href="#"> Hindi </a>
-                <a href="#"> English </a>
+                <a href="/categories/language/telugu"> Telugu </a>
+                <a href="/categories/language/tamil"> Tamil </a>
+                <a href="/categories/language/hindi"> Hindi </a>
+                <a href="/categories/language/english"> English </a>
                 </div>
             </div> 
 
@@ -38,16 +38,16 @@ const UserNav = () => {
                     </i>
                 </button>
                 <div className={style.dropdown_content} >
-                    <a href="#"> Comedy </a>
-                    <a href="#"> Thriller </a>
-                    <a href="#"> Action </a>
-                    <a href="#"> Romance </a>
-                    <a href="#"> Family </a>
+                    <a href="/categories/genre/comedy"> Comedy </a>
+                    <a href="/categories/genre/thriller"> Thriller </a>
+                    <a href="/categories/genre/action"> Action </a>
+                    <a href="/categories/genre/romance"> Romance </a>
+                    <a href="/categories/genre/family"> Family </a>
                 </div>
             </div> 
 
-            <a href="#Coupons"> *Coupons </a>
-            <a href="#Coupons"> Stream/Rent </a>
+            <a href="/coupons"> *Coupons </a>
+            <a href="/rent"> Stream/Rent </a>
 
             <div className={style.search_box}>
                 <input className={style.search_input} 

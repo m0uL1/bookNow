@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import UserNav from '../../components/Nav/UserNav'
 import GridCard from '../../components/Card/GridCard'
 
-function genre(){
+function categories(){
 
     return (
         <div>
-            <UserNav />
-            <GridCard />
+            <center> PageNotFound</center>
         </div>
     );
 };
-export default genre;
+export default categories;

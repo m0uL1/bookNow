@@ -5,15 +5,14 @@ import GridCard from "../../../components/Card/GridCard";
 import MovieDetails from "../../../components/HomeCom/MovieDetails";
 import UserNav from "../../../components/Nav/UserNav";
 
-
-const genre = () => {
+const loc = () => {
     const router = useRouter();
     return (
         <div>
             <UserNav />
-            <GridCard resultFor={router['query']['genre']} />
+            <GridCard resultFor={router['query']['loc']} />
         </div>
     );
 }
 
-export default genre;
+export default loc;
