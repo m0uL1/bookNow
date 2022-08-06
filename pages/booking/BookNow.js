@@ -331,7 +331,7 @@ const BookNow = (props) => {
                     <Screen />
                 </div>   
             </div>  
-            </React.StrictMode>
+        </React.StrictMode>
     );
 };
 

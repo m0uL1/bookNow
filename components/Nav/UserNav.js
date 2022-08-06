@@ -5,7 +5,7 @@ const UserNav = () => {
         <div className={style.navbar} >
             <a href="/home"><img src="https://www.pngkey.com/png/full/393-3933881_book-now-button-book-now-button-png.png" /></a>
             <a href="/home">Home</a>
-            <a href="#newMoview"> new Movies</a>
+            <a href="#newMoview"> Movies</a>
             <div className={style.dropdown}>
                 <button className={style.dropbtn} > Location
                 </button>

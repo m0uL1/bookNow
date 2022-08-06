@@ -5,25 +5,13 @@ import { changeState } from '../../utils/constRedirects'
 import MovieDetails from '../HomeCom/MovieDetails';
 
 function Cards(props){
-
-    const k = [];
-
-    const [details,setDetails] = useState(0)
-    function gotforBooking(){
-        setDetails(1)
-    }
     
     return (
         <div >
-        {
-            details ? <MovieDetails /> : (
-
             <div className={style.Cards}>
 
                 
-                <div className={style.cardBody} 
-                    onClick={() =>  gotforBooking()}
-                >
+                <div className={style.cardBody}>
                     <img src={props.img} className={style.cardImage} />
                 </div>
 
@@ -38,8 +26,6 @@ function Cards(props){
                 </center>
                 
             </div>
-            )
-        }
         </div>
     );
 };

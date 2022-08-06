@@ -2,8 +2,8 @@
     padding: 10px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     position: relative;
-
 }
 
 .Recommended .Header{
@@ -15,7 +15,7 @@
 .Recommended .Header h2{
 
     margin-left: 10px;
-    font-size: large;
+    font-size: 1vmax;
     color: #6c6c6c;
 }
 .Recommended .Header h5{
@@ -30,7 +30,7 @@
     height: inherit;
     font-family: monospace;
     margin-left: 10px;
-    font-size: 25px;
+    font-size: 1vmax;
 }
 
 .ChildTag{
@@ -39,7 +39,7 @@
     margin-top: -7px;
     margin-left: 60px;
     width: 100%;
-    font-size: 9px;
+    font-size: 0.7vmax;
     font-family: monospace;
     color: #6c6c6c;
 
@@ -48,22 +48,22 @@
 .showCase {
     position: relative;
     width: 90%;
-    height: 410px;
-    padding-top: 35px;
+    height: 33vmax;
+    padding-top: 3vmax;
     padding-left: 1%;
     align-items: center;
     margin-left: 5%;
     background: #181818;
     border-color: black;
-    border-radius: 30px;
+    border-radius: 20px;
     flex-direction: column;
     direction: flex;
 }
 
 .Sty1 {
     position: absolute;
-    width: 23%;
-    height: 100%;
+    width: 18vmax;
+    height: 26vmax;
     float: left;
     margin-left: 4%;
     margin-right: 2%;
@@ -71,12 +71,13 @@
     border-radius: 30px;
     flex-direction: row;
     display: table-cell;
+    align-items: center;
 }
 
 .Sty2 {
     position: absolute;
-    width: 23%;
-    height: 100%;
+    width: 18vmax;
+    height: 26vmax;
     float: left;
     margin-left: 27%;
     margin-right: 2%;
@@ -88,8 +89,8 @@
 
 .Sty3 {
     position: absolute;
-    width: 22%;
-    height: 100%;
+    width: 18vmax;
+    height: 26vmax;
     float: left;
     margin-left: 51%;
     margin-right: 2%;
@@ -101,8 +102,8 @@
 
 .Sty4 {
     position: absolute;
-    width: 23%;
-    height: 100%;
+    width: 18vmax;
+    height: 26vmax;
     float: left;
     margin-left: 75%;
     margin-right: 3%;

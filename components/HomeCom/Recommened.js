@@ -24,7 +24,7 @@ const Recommended = (props) => {
                         <h2> {props.Title }</h2>
                     </div>
                     <div className={style.ChildTag}>
-                        <h3> {props.subTitle} &gt; &gt;</h3>
+                        <h3> {props.subTitle} </h3>
                     </div>
                     <hr width="50%" align="left"/>
             </div>

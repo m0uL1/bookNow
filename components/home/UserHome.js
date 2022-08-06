@@ -10,7 +10,7 @@ const UserHome = () => {
             <div className={style.rec}>
                 <div className={style.topdiv}> 
                     <Recommended Title="Recommended Movies"
-                            subTitle= "4 most popular hit movies"
+                            subTitle= " -- 4 most popular hit movies >> "
                             id_ = {0}
                         />
                 </div>
@@ -18,7 +18,7 @@ const UserHome = () => {
             <div className={style.rec}>
                 <div className={style.topdiv}> 
                     <Recommended Title=" Languages "
-                            subTitle= " Regoinal/Desi Voices"
+                            subTitle= " -- Regoinal/Desi Voices"
                             id_ = {1} />
                 </div>
             </div>
@@ -26,7 +26,7 @@ const UserHome = () => {
             <div className={style.rec}>
                 <div className={style.topdiv}> 
                     <Recommended Title=" Genres"
-                            subTitle= " Action/Comedy/Thriller"
+                            subTitle= " -- Action/Comedy/Thriller"
                             id_ = {2} />
                 </div>
             </div>

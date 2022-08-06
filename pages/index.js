@@ -4,6 +4,10 @@ import Home from '../pages/home'
 import { useWallet } from '@solana/wallet-adapter-react'
 import BookNow from './booking/BookNow'
 import { changePage } from '../utils/constRedirects'
+import Cards from '../components/Card/Cards'
+
+import { getMovieDetails, getLanguageDetails , getGenreDetails } from '../utils/recommendation';
+
 export default function App() {
 
   /**
@@ -59,6 +63,8 @@ export default function App() {
    */
   // @g00g1y5p4 
   const { publicKey, signMessage } = useWallet();
+  let details = getMovieDetails()
+
     return(
      <div>
 
