@@ -1,0 +1,39 @@
+.Header{
+    width: inherit;
+    height: 10%;
+    position: relative;
+    margin-top: 3%;
+}
+
+.Header h2{
+
+    margin-left: 10px;
+    font-size: 1vmax;
+    color: #6c6c6c;
+}
+.Header h5{
+    width: inherit;
+    margin-left: 10px;
+    color: #6c6c6c;
+}
+
+
+.HeadTag{
+    width: inherit;
+    height: inherit;
+    font-family: monospace;
+    margin-left: 10px;
+    font-size: 1vmax;
+}
+
+.ChildTag{
+    width: inherit;
+    height: inherit;
+    margin-top: -7px;
+    margin-left: 60px;
+    width: 100%;
+    font-size: 0.7vmax;
+    font-family: monospace;
+    color: #6c6c6c;
+
+}

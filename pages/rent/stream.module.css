@@ -1,6 +1,6 @@
 .showCase {
     position: relative;
-    width: 94%;
+    width: 93vmax;
     margin: 0% 0% 0% 2.5%;
     height: 52vmax;
     align-items: center;
@@ -39,7 +39,7 @@
 
 .recommendation {
     position: relative;
-    width: 94%;
+    width: 93vmax;
     margin: 3% 0% 3% 5%;
     height: 80vmax;
     align-items: center;

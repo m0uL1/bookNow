@@ -1,6 +1,6 @@
 .showCase {
     position: relative;
-    width: 94%;
+    width: 92vmax;
     margin: 3% 0% 3% 3%;
     height: 155vmax;
     align-items: center;
@@ -13,7 +13,7 @@
 .showCase .s1{
     position: absolute;
     width: 33%;
-    height: 23%;
+    height: 22.5%;
     background-color: aliceblue;
     border-color: black;
     border-radius: 30px;
@@ -59,7 +59,7 @@
 .showCase .s5{
     position: absolute;
     width: 72%;
-    height: 17.5%;
+    height: 17%;
     margin-top: 39%;
     background-color: aliceblue;
     border-color: black;
@@ -107,7 +107,7 @@
 
 .showCase .s9{
     position: absolute;
-    width: 31%;
+    width: 32%;
     height: 17%;
     margin-top: 69%;
     margin-left: 64%;
@@ -172,10 +172,10 @@
 
 .showCase .s13{
     position: absolute;
-    width: 59%;
+    width: 59.5%;
     height: 20%;
     margin-top: 98.5%;
-    margin-left: 36.5%;
+    margin-left: 36%;
     background-color: aliceblue;
     border-color: black;
     border-radius: 30px;
@@ -186,7 +186,7 @@
     width: 38%;
     height: 14.8%;
     margin-top: 133%;
-    margin-left: 36.5%;
+    margin-left: 36%;
     background-color: aliceblue;
     border-color: black;
     border-radius: 30px;
@@ -196,10 +196,10 @@
 
 .showCase .s15{
     position: absolute;
-    width: 20%;
+    width: 20.5%;
     height: 14.8%;
     margin-top: 133%;
-    margin-left: 76%;
+    margin-left: 75.5%;
     background-color: aliceblue;
     border-color: black;
     border-radius: 30px;

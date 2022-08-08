@@ -101,9 +101,6 @@ const GridCard = (props) => {
             </div>
             
             <Grid />
-            <Grid />
-            <Grid />
-            <Grid />
             <hr width="50%" align="left"/>
 
         </div>
