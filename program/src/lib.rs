@@ -1,207 +1,234 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::entrypoint::ProgramResult;
-use anchor_spl::token::{self, Token};
 use std::mem::size_of;
-use anchor_lang::solana_program::log::{
-    sol_log_compute_units
-};
 use std::collections::HashMap;
-use solana_program::{
-    program_error::ProgramError,
-};
 
-declare_id!("J3ZVazZkTDAneQ7D2Wc1ecnbfmecT1dEkGjhwbKrRrQr");
+
+
+declare_id!("DHBTg3qqcj3Hr1rWDp8SmQKV1d6E8YH4DGzFfdjmP23A");
 
 #[program]
-mod book_now {
+pub mod book_now{
+
     use super::*;
-    pub fn create_account(ctx: Context<CreateAccount>,
-                          name: String, address : String, photo: String
-                         ) -> ProgramResult {
+    pub fn create_theater_account(
+        ctx: Context<CreateTheaterAccount>,
+        theater_name: String,
+        theater_address: String,
+        theater_inview_url: String,
+    ) -> ProgramResult {
 
-        if name.trim().is_empty() || address.trim().is_empty() {
-           msg!(" not able to create user with these inputs. ");
-           return Err(ProgramError::InvalidInstructionData);
-        };
+    if (    theater_address.trim().is_empty() || 
+            theater_name.trim().is_empty() || 
+            theater_inview_url.trim().is_empty()
+    ){
+            msg!(" Inputs you were provided is Invalid, check again before submit. ");
+            Err(ProgramError::InvalidInstructionData)
+        }
+
+    let user = &mut ctx.accounts.user;
+    user.wallet_address = &mut ctx.accounts.authority.key();
+    user.theater_name = theater_name;
+    user.theater_address = theater_address;
+    user.theater_inview_url = theater_inview_url;
+    user.movie_posters = 0_i32;
+    user.upload_movies = 0_i32;
+    user.tokens = 0_f64;
+
+    Ok(())
+    }
+
+    pub fn upload_movie_poster(
+        ctx: Context<UploadMoviePoster>,
+        movie_name: String,
+        actors: Vec<&str>,
+        genres: Vec<&str>,
+        language: String,
+        price: f32,
+        poster: String,
+    ) -> ProgramResult {
+        if (
+            movie_name.trim().is_empty() || 
+            poster.trim().is_empty() || 
+            language.trim().is_empty() || 
+            price <= 0.0
+        ){
+            msg!(" Inputs you were provided is Invalid, check again before submit. ");
+            Err(ProgramError::InvalidInstructionData)
+        }
+
+        if (actors.len() == 0 || genres.len() == 0) {
+            msg!(" Inputs you were provided is Invalid, check again before submit. ");
+            Err(ProgramError::InvalidInstructionData)
+        }
+
+        let upload_movie_details = &mut ctx.accounts.upload_movie_details;
+        upload_movie_details.movie_uploader = &mut ctx.account.authority.key();
         
-        let user = &mut ctx.accounts.user;
-        user.wallet_address = ctx.accounts.authority.key();
-        user.theater_name = name;
-        user.theater_address = address;
-        user.theater_inview_url = photo;
+        upload_movie_details.movie_name = movie_name;
+        upload_movie_details.language = language;
+        upload_movie_details.poster = poster;
 
-        msg!("-Theater registered");
+        upload_movie_details.price = price;
+
+        upload_movie_details.actors = actors;
+        upload_movie_details.genres = genres;
+
+        upload_movie_details.likes = 0_u8;
+        upload_movie_details.dislikes = 0_u8;
+
+        upload_movie_details.rating = vec![0_u8];
+
+        upload_movie_details.who_like = vec![];
+        upload_movie_details.who_dislike = vec![];
+        upload_movie_details.who_rated = vec![];
+
+
+        upload_movie_details.seats = HashMap::from([
+            ("A1",""),("B1",""),("C1",""),("D1",""),("E1",""),("F1",""),
+            ("G1",""),("H1",""),("I1",""),("J1",""),("A2",""),("B2",""),
+            ("C2",""),("D2",""),("E2",""),("F2",""),("G2",""),("H2",""),
+            ("I2",""),("J2",""),("A3",""),("B3",""),("C3",""),("D3",""),
+            ("E3",""),("F3",""),("G3",""),("H3",""),("I3",""),("J3",""),
+            ("A4",""),("B4",""),("C4",""),("D4",""),("E4",""),("F4",""),
+            ("G4",""),("H4",""),("I4",""),("J4",""),("A5",""),("B5",""),
+            ("C5",""),("D5",""),("E5",""),("F5",""),("G5",""),("H5",""),
+            ("I5",""),("J5",""),("A6",""),("B6",""),("C6",""),("D6",""),
+            ("E6",""),("F6",""),("G6",""),("H6",""),("I6",""),("J6",""),
+            ("A7",""),("B7",""),("C7",""),("D7",""),("E7",""),("F7",""),
+            ("G7",""),("H7",""),("I7",""),("J7",""),("A8",""),("B8",""),
+            ("C8",""),("D8",""),("E8",""),("F8",""),("G8",""),("H8",""),
+            ("I8",""),("J8","")
+        ]);
+
+
         Ok(())
     }
 
-    pub fn create_movie(    ctx: Context<CreateMovie>,
-                            name: String, genre: Vec<String>,
-                            languages: Vec<String>,poster: String,
-                        ) -> ProgramResult {
-        // Get State
-        if name.trim().is_empty() || poster.trim().is_empty() {
-           msg!(" Must provide movie name and poster url. ");
-           return Err(ProgramError::InvalidInstructionData);
-        }
-        if (languages.len() == 0 || genre.len() == 0){
-           msg!(" Must provide available languages and genre ");
-           return Err(ProgramError::InvalidInstructionData);
-            
-        }
-        let movie = &mut ctx.accounts.movie;
-        movie.movie_creator = ctx.accounts.authority.key();
-        movie.movie_title = name;
-        movie.movie_genre = genre;
-        movie.movie_languages = languages;
-        movie.movie_poster_url = poster;
-        movie.ticket_price = 0.056 as u8;
-        movie.loves = 0 as u8;
-        let seat_arrangement:HashMap<String,u8> = HashMap::from([
-                                (String::from("A1"),0 as u8),(String::from("B1"),0 as u8),(String::from("C1"),0 as u8),
-                                (String::from("D1"),0 as u8),(String::from("E1"),0 as u8),(String::from("F1"),0 as u8),
-                                (String::from("G1"),0 as u8),(String::from("H1"),0 as u8),
-                                (String::from("I1"),0 as u8),(String::from("J1"),0 as u8),
-                                (String::from("A2"),0 as u8),(String::from("B2"),0 as u8),(String::from("C2"),0 as u8),
-                                (String::from("D2"),0 as u8),(String::from("E2"),0 as u8),(String::from("F2"),0 as u8),
-                                (String::from("G2"),0 as u8),(String::from("H2"),0 as u8),
-                                (String::from("I2"),0 as u8),(String::from("J2"),0 as u8),
-                                (String::from("A3"),0 as u8),(String::from("B3"),0 as u8),(String::from("C3"),0 as u8),
-                                (String::from("D3"),0 as u8),(String::from("E3"),0 as u8),(String::from("F3"),0 as u8),
-                                (String::from("G3"),0 as u8),(String::from("H3"),0 as u8),
-                                (String::from("I3"),0 as u8),(String::from("J3"),0 as u8),
-                                (String::from("A4"),0 as u8),(String::from("B4"),0 as u8),(String::from("C4"),0 as u8),
-                                (String::from("D4"),0 as u8),(String::from("E4"),0 as u8),(String::from("F4"),0 as u8),
-                                (String::from("G4"),0 as u8),(String::from("H4"),0 as u8),
-                                (String::from("I4"),0 as u8),(String::from("J4"),0 as u8),
-                                (String::from("A5"),0 as u8),(String::from("B5"),0 as u8),(String::from("C5"),0 as u8),
-                                (String::from("D5"),0 as u8),(String::from("E5"),0 as u8),(String::from("F5"),0 as u8),
-                                (String::from("G5"),0 as u8),(String::from("H5"),0 as u8),
-                                (String::from("I5"),0 as u8),(String::from("J5"),0 as u8),
-                                (String::from("A6"),0 as u8),(String::from("B6"),0 as u8),(String::from("C6"),0 as u8),
-                                (String::from("D6"),0 as u8),(String::from("E6"),0 as u8),(String::from("F6"),0 as u8),
-                                (String::from("G6"),0 as u8),(String::from("H6"),0 as u8),
-                                (String::from("I6"),0 as u8),(String::from("J6"),0 as u8),
-                                (String::from("A7"),0 as u8),(String::from("B7"),0 as u8),(String::from("C7"),0 as u8),
-                                (String::from("D7"),0 as u8),(String::from("E7"),0 as u8),(String::from("F7"),0 as u8),
-                                (String::from("G7"),0 as u8),(String::from("H7"),0 as u8),
-                                (String::from("I7"),0 as u8),(String::from("J7"),0 as u8),
-                                (String::from("A8"),0 as u8),(String::from("B8"),0 as u8),(String::from("C8"),0 as u8),
-                                (String::from("D8"),0 as u8),(String::from("E8"),0 as u8),(String::from("F8"),0 as u8),
-                                (String::from("G8"),0 as u8),(String::from("H8"),0 as u8),
-                                (String::from("I8"),0 as u8),(String::from("J8"),0 as u8)
-                            ]);
-        
-        movie.seats = seat_arrangement;
+    pub fn book_seats(
+        ctx: Context<BookSeats>,
+        seats: Vec<&str>,
+    ) -> ProgramResult {
 
-        msg!(" Movie Added! ");
+        if (seats.len() == 0){
+            msg!(" Inputs you were provided is Invalid, check again before submit. ");
+            Err(ProgramError::InvalidInstructionData)
+        }
+
+        let movie = &mut ctx.accounts.movie;
+        let key = &mut ctx.accounts.authority.key();
+
+
+        for i in seats.iter(){
+            if (movie.seats[i] != ""){
+                msg!(" Inputs you were provided is Invalid, check again before submit. ");
+                Err(ProgramError::InvalidInstructionData)
+            }
+        }
+
+        // check buyer_program_acccount money
+
+        // if buyer_account money is less then 
+        // 
+
+        for i in seats.iter(){
+            movie.seats[i] = key;
+        }
+
+        // transfer sols to system program,
+        // increase creator balance
+        //let = 
+
         Ok(())
+
     }
 
-    pub fn book_chair (ctx: Context<BookChair>,
-                            list: Vec<String>,price: u8,
-                        ) -> ProgramResult {
+    //pub fn add_likes
+       
 
-        let movie = &mut ctx.accounts.movie;
-        if (price==0 || (price < (list.len() as u8*movie.ticket_price))){
-            msg!(" Price tampering occurs ");
-            return Err(ProgramError::InvalidInstructionData);
-        }
-        for i in list.iter(){
-            movie.seats.insert(i.to_string(), 1 as u8);
-            //movie.seats[i] = 1 as u8;
-        }
-        return Ok(())
-    }
+}
+
+
+#[derive(Accounts)]
+pub struct BookSeats<'info>{
+
+    #[account(mut)]
+    pub movie: Account<'info, CreateMoviePoster>,
+
+    #[account(mut)]
+    pub authority: Signer<'info>,
+    pub system_program: UncheckedAccount<'info>, 
+
+}
+
+
+
+#[derive(Accounts)]
+pub struct UploadMoviePoster<'info>{
+    #[account(
+            init, seeds = [b"upload_movie_details".as_ref(),authority.key().as_ref()], bump,
+            payer = authority, space = size_of::<CreateMoviePoster>() + 64
+        )]
+    pub upload_movie_details: Account<'info, CreateMoviePoster>,
     
-
-
-}
-
-#[derive(Accounts)]
-pub struct CreateAccount<'info> {
-    #[account(
-            init, 
-            seeds = [b"user".as_ref(),authority.key().as_ref()],
-            bump,
-            payer = authority, 
-            space = size_of::<TheaterAccount>() + 512,
-        )
-     ]
-    pub user: Account<'info, TheaterAccount>,
     #[account(mut)]
     pub authority: Signer<'info>,
     pub system_program: UncheckedAccount<'info>, 
+
 }
 
+#[account]
+pub struct CreateMoviePoster{
+    pub movie_uploader: Pubkey,
+
+    pub movie_name: String,
+    pub language: String,
+    pub poster: String,
+
+    pub actors: Vec<&'a str>,
+    pub genres: Vec<&'a str>,
+
+    pub price: f32,
+    pub likes: u8,
+    pub dislikes: u8,
+    pub rating: Vec<u8>,
+
+    pub who_like: Vec<Pubkey>,
+    pub who_dislike: Vec<Pubkey>,
+    pub who_rated: Vec<Pubkey>,
+
+    pub seats: HashMap<&'a str, &'a str>,
+
+}
+
+
+
+
+
+
 #[derive(Accounts)]
-pub struct CreateMovie<'info> {
-    //#[account(mut, seeds = [b"owner".as_ref()], bump)]
-    //pub owner: Account<'info, OwnerAccount>,
+pub struct CreateTheaterAccount<'info> {
     #[account(
-        init,
-        seeds = [b"movie".as_ref(), authority.key().as_ref()],
-        bump,
-        payer = authority,
-        space = size_of::<MovieAccount>() + 1024,
+        init, seeds = [b"user".as_ref(),authority.key().as_ref()],bump,
+        payer = authority, space = size_of::<CreateAccount>() + 32
     )]
-    pub movie: Account<'info, MovieAccount>,
-    #[account(mut)]
-    pub authority: Signer<'info>,
-    pub system_program: UncheckedAccount<'info>,
-
-
-    // Token program
-    //#[account(constraint = token_program.key == &token::ID)]
-    //pub token_program: Program<'info, Token>,
-}
-#[derive(Accounts)]
-pub struct BookChair<'info> {
-    #[account(mut)]
-    pub movie: Account<'info, MovieAccount>,
-
-    #[account(
-            init, 
-            seeds = [b"chair".as_ref(),authority.key().as_ref()],
-            bump,
-            payer = authority, 
-            space = size_of::<ChairAccount>() + 512,
-        )
-     ]
-    pub chair: Account<'info, ChairAccount>,
+    pub user: Account<'info, CreateAccount>,
+    
     #[account(mut)]
     pub authority: Signer<'info>,
     pub system_program: UncheckedAccount<'info>, 
+
 }
 
-
 #[account]
-pub struct OwnerAccount{
-    pub author: Pubkey
-}
+pub struct CreateAccount{
+    pub wallet_address: Pubkey,
 
-
-#[account]
-pub struct TheaterAccount {
     pub theater_name: String,
     pub theater_address: String,
     pub theater_inview_url: String,
-    pub wallet_address: Pubkey,
-}
 
-#[account]
-pub struct MovieAccount{
-    pub movie_creator: Pubkey,
-    pub movie_title: String,
-    pub movie_genre: Vec<String>,
-    pub movie_languages: Vec<String>,
-    pub movie_poster_url: String,
-    pub ticket_price: u8,
-    pub loves : u8,
-    pub seats: HashMap<String, u8>
-}
-
-#[account]
-pub struct ChairAccount {
-    pub chairs_list: Vec<String>,
-    pub paid_price: u8,
+    pub movie_posters: i32,
+    pub upload_movies: i32,
+    pub tokens: f64,
 }
